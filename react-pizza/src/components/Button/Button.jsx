@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from 'classnames';
-// className="button button--cart"
+
 const Button = ({onClick, className, outline}) => {
   
   return (
