@@ -1,6 +1,9 @@
 const initialState = {
-  sortBy: 'popular',
-  categories: 0
+  sortBy: {
+    type: "popular",
+    order: 'desc'
+  },
+  category: null
 }
 
 const filterCategories = 'filterCategories'
@@ -9,9 +12,9 @@ const sortItemsBy = 'sortItemsBy'
 const filters = (state = initialState, action) => {
   switch (action.type) {
     case filterCategories:
-      return { ...state, categories: action.category };
+      return { ...state, category: action.category };
     case sortItemsBy:
-      return { ...state, sortBy: action.sortBy };
+      return { ...state, sortBy: action.payload  };
     default:
       return state;
   }
