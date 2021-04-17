@@ -11,13 +11,13 @@ const SortPopUp = React.memo(({ activeSortType, items, onClickSortType }) => {
     setVisiblePopup(!visiblePopup);
   };
   const onSelectItem = (type) => {
-    onClickSortType(type)
-    setVisiblePopup(false)
-  }
+    onClickSortType(type);
+    setVisiblePopup(false);
+  };
   const handleOutsideClick = (event) => {
     const path = event.path || (event.composedPath && event.composedPath());
-    if(!path.includes(sortRef.current)) {
-        setVisiblePopup(false)
+    if (!path.includes(sortRef.current)) {
+      setVisiblePopup(false);
     }
   };
   React.useEffect(() => {
@@ -27,7 +27,7 @@ const SortPopUp = React.memo(({ activeSortType, items, onClickSortType }) => {
     <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
-          className={visiblePopup ? 'rotated' : ''}
+          className={visiblePopup ? "rotated" : ""}
           width="10"
           height="6"
           viewBox="0 0 10 6"
@@ -49,33 +49,29 @@ const SortPopUp = React.memo(({ activeSortType, items, onClickSortType }) => {
               <li
                 className={activeSortType === index.type ? "active" : ""}
                 onClick={() => {
-                    onSelectItem(item);
+                  onSelectItem(item);
                 }}
                 key={`${index}_${item.name}`}
               >
                 {item.name}
               </li>
             ))}
-          
           </ul>
         </div>
       )}
     </div>
   );
-})
-
-
+});
 
 SortPopUp.propTypes = {
   activeSortType: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onClickSortType: PropTypes.func.isRequired
-}
-
-SortPopUp.defaultProps = {
-  activeSortType: '',
-  items: []
+  onClickSortType: PropTypes.func.isRequired,
 };
 
+SortPopUp.defaultProps = {
+  activeSortType: "",
+  items: [],
+};
 
 export default SortPopUp;
