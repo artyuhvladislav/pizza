@@ -7,6 +7,10 @@
 body {
   background-color: $background;
   padding-top: 50px;
+
+  @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+    padding-top: 0;
+  }
 }
 
 .wrapper {
@@ -16,6 +20,11 @@ body {
   margin: 0px auto;
   border-radius: 10px;
   max-width: 1400px;
+
+  @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+    width: auto;
+    border-radius: 0px;
+  }
 }
 
 .content {
@@ -35,6 +44,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (min-width: 320px) and (max-width: 667px) {
+      display: block;
+    }
   }
 }
 
@@ -47,6 +60,10 @@ body {
     margin: 90px auto;
     .content__title {
       margin: 0;
+    }
+
+    @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+      margin-top: 15px;
     }
   }
 }
@@ -73,6 +90,11 @@ body {
         stroke: $black;
         stroke-width: 1.9;
       }
+    }
+
+    @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+      font-size: 20px;
+      margin-right: 10px;
     }
   }
 
@@ -208,6 +230,28 @@ body {
         }
       }
     }
+
+    @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+
+      flex-flow: wrap;
+
+      &-img {
+        width: auto;
+      }
+
+      &-price {
+        width: 50%;
+      }
+
+      &-count {
+        &-minus {
+          margin-right: 5px;
+        }
+        &-plus {
+          margin-left: 5px;
+        }
+      }
+    }
   }
 
   &__bottom {
@@ -225,19 +269,26 @@ body {
             color: $orange;
           }
         }
+
+        @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+          font-size: 18px;
+        }
       }
     }
 
     &-buttons {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       margin-top: 40px;
+     
 
       .go-back-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 210px;
+        margin-bottom: 10px;
 
         border-color: darken($color: $gray-line, $amount: 10);
 
@@ -298,7 +349,7 @@ body {
 
     img {
       display: block;
-      width: 300px;
+      width: 280px;
       margin: 45px auto 60px;
     }
 
@@ -308,6 +359,10 @@ body {
       margin: 0 auto;
       font-weight: 600;
       font-size: 18px;
+    }
+
+    @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+      width: auto;
     }
   }
 }
