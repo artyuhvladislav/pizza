@@ -65,7 +65,7 @@ const Home = () => {
           onClickSortType={onSelectSortType}
         />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">{ !categoryNames[category] ? 'Все' : categoryNames[category]} пиццы</h2>
       <div className="content__items">
         {!isLoaded
           ? Array(12)

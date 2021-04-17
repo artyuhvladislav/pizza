@@ -31,5 +31,19 @@
 
       
     }
+
+    @media screen and (min-width: $min-mobile-width) and (max-width: $max-mobile-width) {
+
+      
+      //TO DO
+      li {
+        background-color: #f9f9f9;
+        padding: 8px 10px;
+        font-size: 16px;
+
+  
+        
+      }
+    }
   }
 }

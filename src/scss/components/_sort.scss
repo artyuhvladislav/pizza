@@ -23,6 +23,11 @@
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
+
+      @media screen and (min-width: 320px) and (max-width: 667px){
+        color: #fff;
+        border-bottom: 1px dashed #fff;
+      }
     }
   }
 
