@@ -34,7 +34,9 @@ const Cart = () => {
     dispatch(minusCartItemAC(id));
   };
 
+  
   const cartItemsElements = Object.values(items).map((item, index) => (
+    
     <CartItem
       id={item.items[0].id}
       imageUrl={item.items[0].imageUrl}
@@ -56,7 +58,7 @@ const Cart = () => {
       {!totalCount ? (
         <div className="cart cart--empty">
           <h2>
-            Корзина пустая <icon>😕</icon>
+            Корзина пустая
           </h2>
           <p>
             Вероятней всего, вы не заказывали ещё пиццу.

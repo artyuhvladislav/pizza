@@ -129,7 +129,6 @@ CartItem.defaultProps = {
   name: "name of Pizza",
   size: 36,
   type: "type of Pizza",
-  name: "name of Pizza",
   totalPrice: 0,
   totalCount: 0,
 };

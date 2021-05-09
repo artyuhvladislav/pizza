@@ -4,7 +4,6 @@ import filters from './reducers/filters'
 import pizzas from './reducers/pizzas'
 import cart from './reducers/cart'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const reducers = combineReducers({
     filters,
@@ -12,6 +11,5 @@ const reducers = combineReducers({
     cart,
 })
 
-const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)))
-window.store = store
+const store = createStore(reducers, compose(applyMiddleware(thunk)))
 export default store
